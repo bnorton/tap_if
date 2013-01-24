@@ -1,9 +1,10 @@
 # Tap If
 
-## Install
+## Install / Use
 
-In your `Gemfile` add: `gem 'tap-if'` Then run `bundle install`.
-Add `require 'tap_if'` in an initializer or before you use it in code.
+In your `Gemfile` add: `gem 'tap-if'`  
+Then run `bundle install`.  
+Add `require 'tap_if'` before you use it.  
 
 ##Examples
 

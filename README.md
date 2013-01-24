@@ -29,6 +29,12 @@ def publish
     Facebook.update(the_update)
   end
 end
+
+# Only add a user to an account if the user is not a member.
+
+AccountUser.where(:account_id => account.id, :user_id => user.id).tap_if(:empty?) do |user|
+  account.users << user
+end
 ```
 
 ##The Motivation

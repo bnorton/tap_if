@@ -2,17 +2,13 @@
 
 ## Install
 
-In your `Gemfile` add:
-
-   `gem 'tap_if'`
-
-Then run `bundle install`.
+In your `Gemfile` add: `gem 'tap_if'` Then run `bundle install`.
 
 ##Examples
 
-Delegates to Object#tap if the caller is truthy or given the method name + args evaluate to
+Delegates to Object#tap if the `caller` is truthy or given the `method name + args` evaluate to
 a truthy value. Useful for clarity - always return the caller but only
-execute the code when the condition passes.
+execute the block when the condition passes.
 
 ```ruby
 # Update the user's account token if the user is an admin of the account.

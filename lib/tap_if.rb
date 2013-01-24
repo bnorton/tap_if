@@ -21,7 +21,7 @@ module TapIf
   # end
 
   def tap_if(*args, &block)
-    args.empty? && self || args.any? && self.send(*args) ?
+    args.empty? && self || args.any? && self.respond_to?(args.first) && self.send(*args) ?
       self.tap(&block) : self
   end
 end

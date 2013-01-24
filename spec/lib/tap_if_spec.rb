@@ -39,6 +39,16 @@ describe :tap_if do
     end
   end
 
+  describe "when the method is not defined" do
+    [[nil, :any?], [[], :keys]].each do |type, *args|
+      it "should not tap #{type.inspect}.#{args.first}" do
+        @foo.should_not_receive(:bar)
+
+        type.tap_if(*args, &@block)
+      end
+    end
+  end
+
   describe "when the target is truthy" do
     [true, "", 1, [], {}, 0, :foo].each do |type|
       it "should tap #{type.inspect}" do

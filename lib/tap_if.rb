@@ -1,7 +1,9 @@
 module TapIf
-  # Delegates to Object#tap if the `caller` is truthy or given the `method name + args` evaluate to
-  # a truthy value. Useful for clarity - always return the caller but only
-  # execute the block when the condition passes.
+  # Executes the given block if the `caller` is truthy or given the `method name + args` evaluate to
+  #   a truthy value.
+  #
+  # Useful for clarity - always return the caller but only
+  #   execute the block when the condition passes.
   #
   # Update the user's account token if the user is an admin of the account.
   #
@@ -20,9 +22,10 @@ module TapIf
   #   end
   # end
 
-  def tap_if(*args, &block)
-    args.empty? && self || args.any? && self.respond_to?(args.first) && self.send(*args) ?
-      self.tap(&block) : self
+  def tap_if(*args)
+    yield if (args.empty? && self || args.any? && respond_to?(args.first) && send(*args))
+
+    self
   end
 end
 

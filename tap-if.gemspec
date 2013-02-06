@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tap-if"
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["bnorton"]
-  s.date = "2013-01-30"
+  s.date = "2013-02-06"
   s.description = "Object#tap_if clarifies control flow in many circumstances."
   s.email = "brian.nort@gmail.com"
   s.extra_rdoc_files = [
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.md",
@@ -31,7 +32,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/bnorton/tap-if"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.25"
   s.summary = "Tap into an object but only execute the code if truthy."
 
   if s.respond_to? :specification_version then

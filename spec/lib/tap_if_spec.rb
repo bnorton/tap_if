@@ -11,6 +11,33 @@ describe :tap_if do
     Object.methods.should include(:tap_if)
   end
 
+  describe 'when the block takes no arguments' do
+    it 'should execute the block' do
+      @foo.should_receive(:bar)
+
+      true.tap_if { @foo.bar }
+    end
+  end
+
+  describe 'when the block takes some arguments' do
+    before do
+      @value = nil
+      @block = lambda {|t| @value = t; @foo.bar }
+    end
+
+    it 'should execute the block' do
+      @foo.should_receive(:bar)
+
+      true.tap_if(&@block)
+    end
+
+    it 'should yield the caller' do
+      "foo-true".tap_if(&@block)
+
+      @value.should == "foo-true"
+    end
+  end
+
   describe "when the method evaluates to true" do
     [[Array.new, :empty?], [{:f => :d}, :key?, :f]].each do |type, *args|
       it "should tap #{type.inspect}.#{args.first}" do

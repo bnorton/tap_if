@@ -23,7 +23,7 @@ module TapIf
   # end
 
   def tap_if(*args)
-    yield if (args.empty? && self || args.any? && respond_to?(args.first) && send(*args))
+    yield self if (args.empty? && self || args.any? && respond_to?(args.first) && send(*args))
 
     self
   end

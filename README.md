@@ -1,15 +1,21 @@
 # Tap If
 
-## Install / Use
+## Install
 
-In your `Gemfile` add: `gem 'tap_if'`  
-Then run `bundle install`.  
-Add `require 'tap_if'` before you use it.  
+In your Gemfile:  
+    `gem 'tap_if'`  
 
-##Examples
+Then run:  
+    `$ bundle install`  
 
-Delegates to Object#tap if the `caller` is truthy or given the `method name + args` evaluate to
-a truthy value. Useful for clarity - always return the caller but only
+Before you use it:  
+    `require 'tap_if'`  
+
+##Usage
+
+Yields to the block if the `caller` is truthy or given the `method name + args` evaluate to
+a truthy value.  
+Useful for clarity - always return the caller but only
 execute the block when the condition passes.
 
 ```ruby
@@ -19,7 +25,7 @@ User.find(user_id).tap_if(:admin?, account) do |user|
   user.update_token(account)
 end
 
-# Only update twitter/facebook if the post actually publishes.
+# Only update twitter/facebook if the post actually updates/publishes.
 
 def publish
   (post.pending? && post.update_attributes(:published => true)).tap_if do

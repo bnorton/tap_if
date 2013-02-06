@@ -1,4 +1,4 @@
-# Tap If
+#Tap If [![Build Status](https://travis-ci.org/bnorton/tap_if.png?branch=master)](https://travis-ci.org/bnorton/tap_if)
 
 ## Install
 

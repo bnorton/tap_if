@@ -10,17 +10,6 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-require 'rake'
-require 'rdoc/task'
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'spec'
-  t.pattern = 'spec/**/*_spec.rb'
-  t.verbose = false
-end
-
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name        = 'tap-if'
@@ -35,7 +24,5 @@ end
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rspec/core/rake_task'
-
 RSpec::Core::RakeTask.new(:spec)
-
 task :default => :spec

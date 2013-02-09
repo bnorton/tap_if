@@ -1,4 +1,4 @@
-#Tap If [![Build Status](https://travis-ci.org/bnorton/tap_if.png?branch=master)](https://travis-ci.org/bnorton/tap_if)
+#Tap If and Tap Unless [![Build Status](https://travis-ci.org/bnorton/tap_if.png?branch=master)](https://travis-ci.org/bnorton/tap_if)
 
 ## Install
 
@@ -10,6 +10,7 @@ Then run:
 
 Before you use it:  
     `require 'tap_if'`  
+    `require 'tap_unless'`
 
 ##Usage
 
@@ -39,6 +40,12 @@ end
 # Only add a user to an account if the user is not a member.
 
 AccountUser.where(:account_id => account.id, :user_id => user.id).tap_if(:empty?) do |user|
+  account.users << user
+end
+
+# OR
+
+AccountUser.where(:account_id => account.id, :user_id => user.id).tap_unless(:any?) do |user|
   account.users << user
 end
 ```

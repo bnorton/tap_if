@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tap-if"
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["bnorton"]
-  s.date = "2013-02-06"
+  s.date = "2013-02-09"
   s.description = "Object#tap_if clarifies control flow in many circumstances."
   s.email = "brian.nort@gmail.com"
   s.extra_rdoc_files = [
@@ -25,7 +25,9 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/tap_if.rb",
+    "lib/tap_unless.rb",
     "spec/lib/tap_if_spec.rb",
+    "spec/lib/tap_unless_spec.rb",
     "spec/spec_helper.rb",
     "tap-if.gemspec"
   ]

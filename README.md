@@ -3,7 +3,7 @@
 ## Install
 
 In your Gemfile:  
-    `gem 'tap_if'`  
+    `gem 'tap-if'`  
 
 Then run:  
     `$ bundle install`  
